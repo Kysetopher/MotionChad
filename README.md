@@ -1,8 +1,8 @@
-# Wishh.ai – Intelligent Note-Taking and Chat Assistant
+Intelligent Note-Taking and Chat Assistant
 
-Wishh.ai is a full-stack Next.js application that combines a chat-oriented user interface with AI-driven insights. It features Supabase authentication, Stripe-powered subscriptions, and a modern editor built on the Plate framework.
+This is a full-stack Next.js application that combines a chat-oriented user interface with AI-driven insights. It features Supabase authentication, Stripe-powered subscriptions, and a modern editor built on the Plate framework.
 
-You can interact with Wishh.ai directly at [https://wishh.ai](https://wishh.ai).
+a Branded version of this repository is located at  at [https://wishh.ai](https://wishh.ai).
 
 Built as a privacy-focused productivity assistant, Wishh.ai offers an AI-first interface that combines streaming chat suggestions with note-like "Reveries." These drag-and-drop cards sync in real time via Supabase, letting you organize knowledge into structured, retrievable insights. Customizable agents powered by OpenAI adapt to your workflow.
 
