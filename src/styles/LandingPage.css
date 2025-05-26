@@ -1,146 +1,36 @@
 
-/***************************************
-  Overall Page & Canvas Container
-***************************************/
+/* Basic layout for the login page */
 
-  
+.login-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  color: #fff;
+  padding: 0 1rem;
+}
 
-  .login-container-splash {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
+/* Google login button */
 
-  }
-  
-  /***************************************
-    Main Centered Content
-  ***************************************/
+.google-login-button {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid #fff;
+  padding: 0.25rem 1rem 0.5rem 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  backdrop-filter: blur(10px);
+}
 
-  .login-content {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    text-align: center;
-    color: #fff;
-    padding: 0 1rem;
-  }
-  
-  /***************************************
-    Logo / SVG
-  ***************************************/
-
-  .heyjinn-logo {
-    width: 100px;
-    margin-bottom: 30px;
-  }
-  
-  /***************************************
-    Glitch Text for "Wishh.ai"
-  ***************************************/
-
-  .glitch {
-    position: relative;
-    font-size: 4rem;
-    font-weight: bold;
-    color: #fff;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-  }
-  
-
-  .glitch::before,
-  .glitch::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    clip: rect(0, 900px, 0, 0);
-  }
-  
-  .glitch::before {
-    left: 2px;
-    text-shadow: -2px 0 red;
-    animation: glitchAnim 2s infinite linear alternate-reverse;
-  }
-  
-  .glitch::after {
-    left: -2px;
-    text-shadow: -2px 0 blue;
-    animation: glitchAnim 3s infinite linear alternate-reverse;
-  }
-  
-
-  @keyframes glitchAnim {
-    0% {
-      clip: rect(0, 900px, 0, 0);
-    }
-  
-    20% {
-      clip: rect(10px, 900px, 50px, 0);
-    }
-  
-    40% {
-      clip: rect(20px, 900px, 30px, 0);
-    }
-  
-    60% {
-      clip: rect(10px, 900px, 50px, 0);
-    }
-  
-    80% {
-      clip: rect(0, 900px, 0, 0);
-    }
-  
-    100% {
-      clip: rect(0, 900px, 0, 0);
-    }
-  }
-  
-
-  /***************************************
-    Subtitle Text
-  ***************************************/
-  .subtitle-text h2 {
-    font-size: 2rem;
-    margin: 1rem 0 0.5rem;
-  }
-  
-  .subtitle-text p, .subtitle-text {
-    font-size: 1.25rem;
-    line-height: 1.5;
-  }
-  
-  /***************************************
-    Google Login Button near bottom
-  ***************************************/
-
-
-  .google-login-button {
-    margin-top:20px;
-    display: flex;
-    align-items: center;
-    gap:10px;
-    color: #fff;
-    background-color: transparent;
-    border: 1px solid #fff;
-    padding: 0.25rem 1rem 0.50rem 0.50rem;
-    font-size: 1rem;
-    cursor: pointer;
-    outline: none;
-    border-radius: 4px;
-    transition: background-color 0.2s ease;
-    backdrop-filter: blur(10px);
-  }
-  
-  .google-login-button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
+.google-login-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}

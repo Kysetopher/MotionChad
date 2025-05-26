@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'Wishh.ai',
-  description: 'Built by two guys and a cat',
+  title: 'AI Starter',
+  description: 'Boilerplate AI productivity app',
 }
 
 export default function RootLayout({ children }) {

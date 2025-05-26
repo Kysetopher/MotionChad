@@ -103,7 +103,7 @@ const LoginSplash = ({ message }) => {
             >
                 Your browser does not support the video tag.
             </video>
-            <div className="login-page-branding">WISHH.AI</div>
+            <div className="login-page-branding">AI Starter</div>
             <div className="login-button-container">
                 <img
                     className="google-login-button"

@@ -21,7 +21,7 @@ const TileAdmin = () => {
     }
   };
   const handleCopy = () => {
-    const linkToCopy = `www.wishh.ai/public?id=${reverieData.id}`;
+    const linkToCopy = `www.example.com/public?id=${reverieData.id}`;
     navigator.clipboard.writeText(linkToCopy).then(() => {
       setShowCopied(true);
       setTimeout(() => setShowCopied(false), 2000); // Hide "Copied!" after 2 seconds
@@ -73,7 +73,7 @@ const TileAdmin = () => {
               <div>
                 <div className="copy-link-object"  onClick={handleCopy}>
                   <p >
-                    www.wishh.ai/public?id={reverieData.id}
+                    www.example.com/public?id={reverieData.id}
                   </p>
                 
                   {showCopied && "Copied!"}
