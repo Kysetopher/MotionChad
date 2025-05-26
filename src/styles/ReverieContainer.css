@@ -1,0 +1,12 @@
+.reverie-display {
+  width: 100%;
+
+  bottom: 0;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+.reverie-container{
+  overflow-y: auto;
+  margin-top: auto;
+}

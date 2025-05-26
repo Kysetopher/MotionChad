@@ -1,0 +1,118 @@
+.shine-animation {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 400%;
+    background: linear-gradient(120deg, rgba(242, 242, 245, 0),rgba(242, 239, 239, 0), rgba(236, 234, 239, 0),
+     rgba(241, 239, 239, 0.2), rgba(212, 212, 213, 0),rgba(241, 239, 239, 0.496),rgba(241, 239, 239, 0.003), rgba(212, 212, 213, 0), rgba(212, 212, 213, 0), rgba(255, 255, 255, 0),rgba(255, 255, 255, 0));
+    z-index:1;
+    transform: skewX(-25deg);
+    pointer-events: none;
+    animation: shine 2s infinite ease-in-out;
+  
+  }
+  .selected-animation{
+    border:5px solid black;
+    border-right:0px;
+    border-left:0px;
+    border-bottom:0px;
+    pointer-events: none;
+    position:absolute;
+    top: 0;
+    width: 100%;
+    height:100%;
+    background: linear-gradient(135deg, #c43e9c23, #fff83724);
+    /* animation: glow 1.5s infinite ease-in-out; */
+    z-index:1;
+    }
+    
+  .processing-animation{
+    pointer-events: none;
+    position:absolute;
+    top: 0;
+    width: 100%;
+    height:100%;
+    background: linear-gradient(135deg, #4a70da, #9c1d9e);
+    animation: glow 1.5s infinite ease-in-out;
+    z-index:1;
+    }
+
+.delete-animation{
+    pointer-events: none;
+    position:absolute;
+    filter: blur(100);
+    width: 100%;
+    height:100%;
+    background: linear-gradient(135deg, #a71e1e48, #b975755c);
+    animation: delete 1.5s ease-in-out;
+    z-index:5;
+}
+  @keyframes glow {
+    0% {
+      opacity: .9;
+      filter: brightness(1.2);
+    }
+    50% {
+      opacity: 1;
+      filter: brightness(1.7);
+    }
+    100% {
+      opacity: .9;
+      filter: brightness(1.2);
+    }
+  }
+
+  @keyframes delete {
+    0% {
+        opacity: 0.5;
+        background: linear-gradient(135deg, #a7751e90, #b9897589);
+    }
+    25% {
+        opacity: 0.6;
+        background: linear-gradient(135deg, #885938, #a06c50);
+    }
+    50% {
+        opacity: 0.7;
+        background: linear-gradient(135deg, #352618fe, #1d1305fe);
+    }
+    75% {
+        opacity: 0.85;
+        background: linear-gradient(135deg, #1d1d1d, #0d0d0d);
+    }
+    100% {
+        opacity: 1;
+        background: linear-gradient(135deg, #000000, #000000);
+    }
+}
+  @keyframes shine {
+    0% {
+      left: -100%;
+    }
+    100% {
+        left: 125%;
+    }
+  }
+
+  @keyframes sineOpacity {
+    0% {
+      opacity: 0.2; 
+    }
+    50% {
+      opacity: 0.4; 
+    }
+    100% {
+      opacity: 0.2; 
+    }
+  }
+
+  @keyframes progress {
+    0% {
+      background: linear-gradient(to right, #987e7ebb 0%, #ff0000 50%, #ffffff 50%, #ffffff 100%);
+      background-size: 200% 100%;
+      background-position: 100% 0;
+    }
+    100% {
+      background-position: -100% 0;
+    }
+  }

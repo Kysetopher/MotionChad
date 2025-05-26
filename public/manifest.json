@@ -1,0 +1,29 @@
+{
+    "name": "Wishh.ai",
+    "short_name": "Wishh.ai",
+    "description": "Install webapp",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#000000",
+    "orientation": "any",
+    "icons": [
+      {
+        "src": "/icon/heyjinn-dark-solid.svg",
+        "sizes": "any",
+        "type": "image/svg+xml",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "/icon/site_icon.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/icon/site_icon.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+   
+  }

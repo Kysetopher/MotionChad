@@ -1,0 +1,646 @@
+.insights-container{
+  display: grid;
+  /* gap:10px; */
+}
+/* .insight-title-column{
+} */
+.insight-item{
+
+    border-radius:5px;
+    margin: 5px 20px 5px 20px;
+    white-space: pre-line;
+}
+
+  .insight-title-options {
+   position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    font-size:14px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    padding: 8px 0px 10px 0px;
+  }
+  .insight-body-options{
+    padding:15px;
+    line-height:auto;
+  }
+  .insight-body-options section{
+    padding-bottom:10px;
+  }
+ .insight-title{
+  padding: 0px 15px 0px 15px;
+  font-size: 20px;
+  font-weight: 630;
+  align-items: center;
+  }
+  .insight-subtitle{
+    padding: 0px 15px 0px 15px;
+
+   }
+   .insight-action-container{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+
+   }
+   .insight-action{
+    flex-shrink: 0; 
+    opacity: 100%;
+    margin-right: 8px;
+    padding: 0px;
+    border-radius:5px;
+    height: 35px;
+    filter: invert(1);
+   }
+   .insight-action:hover{
+    opacity: 50%;
+    background-color: black;
+    filter: invert(0);
+
+   }
+   .insight-action:active{
+    opacity: 100%;
+    filter: invert(0);
+
+   }
+   .action-container-mobile{
+    backdrop-filter: blur(1px); 
+    -webkit-backdrop-filter: blur(1px); 
+    background: rgba(255, 255, 255, 0);
+    position: absolute;
+    right:0px;
+    width: 100%;
+    height: 100%;
+    top:0px;
+    z-index: 100;
+   }
+
+
+   .status-button-group {
+    max-height: 30px;
+    border-radius: 5px;
+    border: 3px solid black;
+    display: flex; /* Change to flex for horizontal alignment */
+    flex-direction: row; /* Ensure items are arranged in a row */
+    align-items: center; /* Vertically center items */
+  }
+   .status-button-group img{
+    border-radius: 0px;
+   }
+   .status-field{
+    color:black;
+    font-size:20px;
+    align-self:start;
+    padding-right:10px;
+   }
+ /*-----------------------------[ INSIGHT FIELDS  ]----------------------------*/
+
+ .object-array-field {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+  gap: 1rem; 
+  padding: 1rem; 
+}
+
+.object-array-value {
+  position:relative;
+  border-radius: 5px; 
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  text-align: left; 
+}
+
+.object-array-value::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter:opacity(.2);
+}
+
+.itinerary-item::after {
+  background-color: var(--travel-plans );
+}
+.action-item::after, .time-line-date:after{
+  background-color: var(--projects );
+}
+ /*-----------------------------[ INSIGHT COLOR PATTERS ]----------------------------*/
+.insight-item[data-category="user-information"] {
+  border: 2px solid var(--user-information);
+}
+
+.insight-title-options[data-category="user-information"],
+.notification[data-category="user-information"] {
+  background-color: var(--user-information);
+}
+
+/* todos-tasks => todos-tasks (#95FF00) */
+.insight-item[data-category="todos-tasks"] {
+  border: 2px solid var(--todos-tasks);
+}
+
+.insight-title-options[data-category="todos-tasks"],
+.notification[data-category="todos-tasks"] {
+  background-color: var(--todos-tasks);
+}
+
+/* reminders => reminders (#51FF00) */
+.insight-item[data-category="reminders"] {
+  border: 2px solid var(--reminders);
+}
+
+.insight-title-options[data-category="reminders"],
+.notification[data-category="reminders"] {
+  background-color: var(--reminders);
+}
+
+/* food-cooking-cuisine-dietary-nutrition => food-cooking-cuisine-dietary-nutrition (#00FF5F) */
+.insight-item[data-category="food-cooking-cuisine-dietary-nutrition"] {
+  border: 2px solid var(--food-cooking-cuisine-dietary-nutrition);
+}
+
+.insight-title-options[data-category="food-cooking-cuisine-dietary-nutrition"],
+.notification[data-category="food-cooking-cuisine-dietary-nutrition"] {
+  background-color: var(--food-cooking-cuisine-dietary-nutrition);
+}
+
+/* movies-tv-anime => movies-tv-anime (#00FF9F) */
+.insight-item[data-category="movies-tv-anime"] {
+  border: 2px solid var(--movies-tv-anime);
+}
+
+.insight-title-options[data-category="movies-tv-anime"],
+.notification[data-category="movies-tv-anime"] {
+  background-color: var(--movies-tv-anime);
+}
+
+/* books-audiobooks => books-audiobooks (#00FFB4) */
+.insight-item[data-category="books-audiobooks"] {
+  border: 2px solid var(--books-audiobooks);
+}
+
+.insight-title-options[data-category="books-audiobooks"],
+.notification[data-category="books-audiobooks"] {
+  background-color: var(--books-audiobooks);
+}
+
+/* projects => projects (#00FFDF) */
+.insight-item[data-category="projects"] {
+  border: 2px solid var(--projects);
+}
+
+.insight-title-options[data-category="projects"],
+.notification[data-category="projects"] {
+  background-color: var(--projects);
+}
+
+/* lectures => lectures (#00FFFF) */
+.insight-item[data-category="lectures"] {
+  border: 2px solid var(--lectures);
+}
+
+.insight-title-options[data-category="lectures"],
+.notification[data-category="lectures"] {
+  background-color: var(--lectures);
+}
+
+/* games-gaming => games-gaming (#00D4FF) */
+.insight-item[data-category="games-gaming"] {
+  border: 2px solid var(--games-gaming);
+}
+
+.insight-title-options[data-category="games-gaming"] {
+  background-color: var(--games-gaming);
+}
+
+/* event-hosting => event-hosting (#00AAFF) */
+.insight-item[data-category="event-hosting"] {
+  border: 2px solid var(--event-hosting);
+}
+
+.insight-title-options[data-category="event-hosting"] {
+  background-color: var(--event-hosting);
+}
+
+/* event-attending => event-attending (#007FFF) */
+.insight-item[data-category="event-attending"] {
+  border: 2px solid var(--event-attending);
+}
+
+.insight-title-options[data-category="event-attending"] {
+  background-color: var(--event-attending);
+}
+
+/* writing-stories => writing-stories (#AE00FF) */
+.insight-item[data-category="writing-stories"] {
+  border: 2px solid var(--writing-stories);
+}
+
+.insight-title-options[data-category="writing-stories"] {
+  background-color: var(--writing-stories);
+}
+
+/* song-writer => song-writer (#D900FF) */
+.insight-item[data-category="song-writer"] {
+  border: 2px solid var(--song-writer);
+}
+
+.insight-title-options[data-category="song-writer"] {
+  background-color: var(--song-writer);
+}
+
+/* travel-plans => travel-plans (#FF0094) */
+.insight-item[data-category="travel-plans"] {
+  border: 2px solid var(--travel-plans);
+}
+
+.insight-title-options[data-category="travel-plans"] {
+  background-color: var(--travel-plans);
+}
+
+/* physical-fitness-exercise => physical-fitness-exercise (#FF003F) */
+.insight-item[data-category="physical-fitness-exercise"] {
+  border: 2px solid var(--physical-fitness-exercise);
+}
+
+.insight-title-options[data-category="physical-fitness-exercise"] {
+  background-color: var(--physical-fitness-exercise);
+}
+
+/* financial-planning => financial-planning (#FF2F00) */
+.insight-item[data-category="financial-planning"] {
+  border: 2px solid var(--financial-planning);
+}
+
+.insight-title-options[data-category="financial-planning"] {
+  background-color: var(--financial-planning);
+}
+
+/* art-imagery => art-imagery (#D9FF00) */
+.insight-item[data-category="art-imagery"] {
+  border: 2px solid var(--art-imagery);
+}
+
+.insight-title-options[data-category="art-imagery"] {
+  background-color: var(--art-imagery);
+}
+
+/* news-current-affairs => news-current-affairs (#AEFF00) */
+.insight-item[data-category="news-current-affairs"] {
+  border: 2px solid var(--news-current-affairs);
+}
+
+.insight-title-options[data-category="news-current-affairs"] {
+  background-color: var(--news-current-affairs);
+}
+
+/* personality-traits-motivations => personality-traits-motivations (#51FF00) */
+.insight-item[data-category="personality-traits-motivations"] {
+  border: 2px solid var(--personality-traits-motivations);
+}
+
+.insight-title-options[data-category="personality-traits-motivations"] {
+  background-color: var(--personality-traits-motivations);
+}
+
+/* decision-making-styles => decision-making-styles (#00FF9F) */
+.insight-item[data-category="decision-making-styles"] {
+  border: 2px solid var(--decision-making-styles);
+}
+
+.insight-title-options[data-category="decision-making-styles"] {
+  background-color: var(--decision-making-styles);
+}
+
+/* pets => pets (#00FFB4) */
+.insight-item[data-category="pets"] {
+  border: 2px solid var(--pets);
+}
+
+.insight-title-options[data-category="pets"] {
+  background-color: var(--pets);
+}
+
+/* pets-animals => pets-animals (#00FFDF) */
+.insight-item[data-category="pets-animals"] {
+  border: 2px solid var(--pets-animals);
+}
+
+.insight-title-options[data-category="pets-animals"] {
+  background-color: var(--pets-animals);
+}
+
+/* appearance-personal-style => appearance-personal-style (#00D4FF) */
+.insight-item[data-category="appearance-personal-style"] {
+  border: 2px solid var(--appearance-personal-style);
+}
+
+.insight-title-options[data-category="appearance-personal-style"] {
+  background-color: var(--appearance-personal-style);
+}
+
+/* business-intelligence => business-intelligence (#51FF00) */
+.insight-item[data-category="business-intelligence"] {
+  border: 2px solid var(--business-intelligence);
+}
+
+.insight-title-options[data-category="business-intelligence"] {
+  background-color: var(--business-intelligence);
+}
+
+/* resume-work-experience => resume-work-experience (#00FF1F) */
+.insight-item[data-category="resume-work-experience"] {
+  border: 2px solid var(--resume-work-experience);
+}
+
+.insight-title-options[data-category="resume-work-experience"] {
+  background-color: var(--resume-work-experience);
+}
+
+/* organizations-corporations => organizations-corporations (#00FF9F) */
+.insight-item[data-category="organizations-corporations"] {
+  border: 2px solid var(--organizations-corporations);
+}
+
+.insight-title-options[data-category="organizations-corporations"] {
+  background-color: var(--organizations-corporations);
+}
+
+/***************************************
+  2) Old => New name changes
+***************************************/
+
+/* agent-behavior => agent-behavior-custom-instructions (#D9FF00) */
+.insight-item[data-category="agent-behavior-custom-instructions"] {
+  border: 2px solid var(--agent-behavior-custom-instructions);
+}
+
+.insight-title-options[data-category="agent-behavior-custom-instructions"],
+.notification[data-category="agent-behavior-custom-instructions"] {
+  background-color: var(--agent-behavior-custom-instructions);
+}
+
+/* calendar-schedule-planner => dates-calendar-planner-schedule (#AEFF00) */
+.insight-item[data-category="dates-calendar-planner-schedule"] {
+  border: 2px solid var(--dates-calendar-planner-schedule);
+}
+
+.insight-title-options[data-category="dates-calendar-planner-schedule"],
+.notification[data-category="dates-calendar-planner-schedule"] {
+  background-color: var(--dates-calendar-planner-schedule);
+}
+
+/* reminders => reminders (same name, already mapped, shown above) */
+
+/* plans-goals-aspirations => personal-growth-accountability-aspirations (#4300FF) */
+.insight-item[data-category="personal-growth-accountability-aspirations"] {
+  border: 2px solid var(--personal-growth-accountability-aspirations);
+}
+
+.insight-title-options[data-category="personal-growth-accountability-aspirations"],
+.notification[data-category="personal-growth-accountability-aspirations"] {
+  background-color: var(--personal-growth-accountability-aspirations);
+}
+
+/* passions-interests => research-interests-curiosity (#4300FF) */
+.insight-item[data-category="research-interests-curiosity"] {
+  border: 2px solid var(--research-interests-curiosity);
+}
+
+.insight-title-options[data-category="research-interests-curiosity"] {
+  background-color: var(--research-interests-curiosity);
+}
+
+/* contacts-relationships => personal-contacts-relationships (#FF00EA) */
+.insight-item[data-category="personal-contacts-relationships"] {
+  border: 2px solid var(--personal-contacts-relationships);
+}
+
+.insight-title-options[data-category="personal-contacts-relationships"] {
+  background-color: var(--personal-contacts-relationships);
+}
+
+/* geographic => geographic-location (#FF006A) */
+.insight-item[data-category="geographic-location"] {
+  border: 2px solid var(--geographic-location);
+}
+
+.insight-title-options[data-category="geographic-location"] {
+  background-color: var(--geographic-location);
+}
+
+/* health-medicine => health-sleep-medicine (#FF0000) */
+.insight-item[data-category="health-sleep-medicine"] {
+  border: 2px solid var(--health-sleep-medicine);
+}
+
+.insight-title-options[data-category="health-sleep-medicine"] {
+  background-color: var(--health-sleep-medicine);
+}
+
+/* mental-health => mental-health-emotional-wellbeing (#FF0000) */
+.insight-item[data-category="mental-health-emotional-wellbeing"] {
+  border: 2px solid var(--mental-health-emotional-wellbeing);
+}
+
+.insight-title-options[data-category="mental-health-emotional-wellbeing"] {
+  background-color: var(--mental-health-emotional-wellbeing);
+}
+
+/* values-principles => introspection-reflections-values-principles (#FFF700) */
+.insight-item[data-category="introspection-reflections-values-principles"] {
+  border: 2px solid var(--introspection-reflections-values-principles);
+}
+
+.insight-title-options[data-category="introspection-reflections-values-principles"] {
+  background-color: var(--introspection-reflections-values-principles);
+}
+
+/* language-preferences => language-preferences-proficiency (#FF8800) */
+.insight-item[data-category="language-preferences-proficiency"] {
+  border: 2px solid var(--language-preferences-proficiency);
+}
+
+.insight-title-options[data-category="language-preferences-proficiency"] {
+  background-color: var(--language-preferences-proficiency);
+}
+
+/* social-cultural-influences => social-cultural-identity (#FFB300) */
+.insight-item[data-category="social-cultural-identity"] {
+  border: 2px solid var(--social-cultural-identity);
+}
+
+.insight-title-options[data-category="social-cultural-identity"] {
+  background-color: var(--social-cultural-identity);
+}
+
+/* humor-comedy => humor-comedy-inside-humor (#95FF00) */
+.insight-item[data-category="humor-comedy-inside-humor"] {
+  border: 2px solid var(--humor-comedy-inside-humor);
+}
+
+.insight-title-options[data-category="humor-comedy-inside-humor"] {
+  background-color: var(--humor-comedy-inside-humor);
+}
+
+/* hobbies-habits => hobbies-habits-leisure (#00FF1F) */
+.insight-item[data-category="hobbies-habits-leisure"] {
+  border: 2px solid var(--hobbies-habits-leisure);
+}
+
+.insight-title-options[data-category="hobbies-habits-leisure"] {
+  background-color: var(--hobbies-habits-leisure);
+}
+
+/* existential-thoughts-philosophies => philosophical-ideological-existential (#AEFF00) */
+.insight-item[data-category="philosophical-ideological-existential"] {
+  border: 2px solid var(--philosophical-ideological-existential);
+}
+
+.insight-title-options[data-category="philosophical-ideological-existential"] {
+  background-color: var(--philosophical-ideological-existential);
+}
+
+/* community => community-membership (#00AAFF) */
+.insight-item[data-category="community-membership"] {
+  border: 2px solid var(--community-membership);
+}
+.insight-title-options[data-category="community-membership"] {
+  background-color: var(--community-membership);
+}
+
+/* memories => memories-life-events (#007FFF) */
+.insight-item[data-category="memories-life-events"] {
+  border: 2px solid var(--memories-life-events);
+}
+
+.insight-title-options[data-category="memories-life-events"] {
+  background-color: var(--memories-life-events);
+}
+
+/* personal-growth-accountability => personal-growth-accountability-aspirations (#4300FF)
+   (already shown above as plans-goals-aspirations => same target) */
+
+/* philanthropy-legacy-impact => philanthropy-legacy-sustainability-impact (#9900FF) */
+.insight-item[data-category="philanthropy-legacy-sustainability-impact"] {
+  border: 2px solid var(--philanthropy-legacy-sustainability-impact);
+}
+.insight-title-options[data-category="philanthropy-legacy-sustainability-impact"] {
+  background-color: var(--philanthropy-legacy-sustainability-impact);
+}
+
+/* social-media => my-social-media (#D900FF) */
+.insight-item[data-category="my-social-media"] {
+  border: 2px solid var(--my-social-media);
+}
+.insight-title-options[data-category="my-social-media"] {
+  background-color: var(--my-social-media);
+}
+
+/* political-civic-engagement => political-civic-engagement (#FF00BF) */
+.insight-item[data-category="political-civic-engagement"] {
+  border: 2px solid var(--political-civic-engagement);
+}
+.insight-title-options[data-category="political-civic-engagement"] {
+  background-color: var(--political-civic-engagement);
+}
+
+/* family-roles => family-composition-roles (#FF006A) */
+.insight-item[data-category="family-composition-roles"] {
+  border: 2px solid var(--family-composition-roles);
+}
+.insight-title-options[data-category="family-composition-roles"] {
+  background-color: var(--family-composition-roles);
+}
+
+/* romantic-sexual => romantic-sexual (#FF0000) */
+.insight-item[data-category="romantic-sexual"] {
+  border: 2px solid var(--romantic-sexual);
+}
+.insight-title-options[data-category="romantic-sexual"] {
+  background-color: var(--romantic-sexual);
+}
+
+/* sensory-preferences-physical-environment => same (#FF2F00) */
+.insight-item[data-category="sensory-preferences-physical-environment"] {
+  border: 2px solid var(--sensory-preferences-physical-environment);
+}
+.insight-title-options[data-category="sensory-preferences-physical-environment"] {
+  background-color: var(--sensory-preferences-physical-environment);
+}
+
+/* consumer-behavior => consumer-behavior (#FF5900) */
+.insight-item[data-category="consumer-behavior"] {
+  border: 2px solid var(--consumer-behavior);
+}
+.insight-title-options[data-category="consumer-behavior"] {
+  background-color: var(--consumer-behavior);
+}
+
+/* communication-collaboration-styles => communication-collaboration-styles (#FFB300) */
+.insight-item[data-category="communication-collaboration-styles"] {
+  border: 2px solid var(--communication-collaboration-styles);
+}
+
+.insight-title-options[data-category="communication-collaboration-styles"] {
+  background-color: var(--communication-collaboration-styles);
+}
+
+/* dream-diary => dream-diary (#D9FF00) */
+.insight-item[data-category="dream-diary"] {
+  border: 2px solid var(--dream-diary);
+}
+
+.insight-title-options[data-category="dream-diary"] {
+  background-color: var(--dream-diary);
+}
+
+/* vault => password-vault (#00FFB4) */
+.insight-item[data-category="password-vault"] {
+  border: 2px solid var(--password-vault);
+}
+
+.insight-title-options[data-category="password-vault"] {
+  background-color: var(--password-vault);
+}
+
+/* video-animation-projects (#00FFFF) */
+.insight-item[data-category="video-animation-projects"] {
+  border: 2px solid var(--video-animation-projects);
+}
+
+.insight-title-options[data-category="video-animation-projects"] {
+  background-color: var(--video-animation-projects);
+}
+
+/* conversations-podcasts-debates (#00D4FF) */
+.insight-item[data-category="conversations-podcasts-debates"] {
+  border: 2px solid var(--conversations-podcasts-debates);
+}
+
+.insight-title-options[data-category="conversations-podcasts-debates"] {
+  background-color: var(--conversations-podcasts-debates);
+}
+
+/* thought-leaders-influencers (#00AAFF) */
+.insight-item[data-category="thought-leaders-influencers"] {
+  border: 2px solid var(--thought-leaders-influencers);
+}
+
+.insight-title-options[data-category="thought-leaders-influencers"] {
+  background-color: var(--thought-leaders-influencers);
+}
+
+/* custom-lists (#007FFF) */
+.insight-item[data-category="custom-lists"] {
+  border: 2px solid var(--custom-lists);
+}
+
+.insight-title-options[data-category="custom-lists"] {
+  background-color: var(--custom-lists);
+}

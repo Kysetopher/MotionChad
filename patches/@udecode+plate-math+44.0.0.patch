@@ -1,0 +1,58 @@
+diff --git a/node_modules/@udecode/plate-math/dist/index.js b/node_modules/@udecode/plate-math/dist/index.js
+index 35ff16e..19801b8 100644
+--- a/node_modules/@udecode/plate-math/dist/index.js
++++ b/node_modules/@udecode/plate-math/dist/index.js
+@@ -76,8 +76,6 @@ var insertInlineEquation = (editor, texExpression, options) => {
+   );
+ };
+ 
+-// src/lib/BaseEquationPlugin.ts
+-var import_katex_min = require("katex/dist/katex.min.css");
+ var BaseEquationPlugin = (0, import_plate2.createSlatePlugin)({
+   key: "equation",
+   node: { isElement: true, isVoid: true }
+diff --git a/node_modules/@udecode/plate-math/dist/index.mjs b/node_modules/@udecode/plate-math/dist/index.mjs
+index 7027472..91ae5b4 100644
+--- a/node_modules/@udecode/plate-math/dist/index.mjs
++++ b/node_modules/@udecode/plate-math/dist/index.mjs
+@@ -37,7 +37,9 @@ var insertInlineEquation = (editor, texExpression, options) => {
+ };
+ 
+ // src/lib/BaseEquationPlugin.ts
+-import "katex/dist/katex.min.css";
++if (typeof window !== 'undefined') {
++  import('katex/dist/katex.min.css');
++}
+ var BaseEquationPlugin = createSlatePlugin2({
+   key: "equation",
+   node: { isElement: true, isVoid: true }
+diff --git a/node_modules/@udecode/plate-math/dist/react/index.js b/node_modules/@udecode/plate-math/dist/react/index.js
+index 493762d..defbc92 100644
+--- a/node_modules/@udecode/plate-math/dist/react/index.js
++++ b/node_modules/@udecode/plate-math/dist/react/index.js
+@@ -78,8 +78,7 @@ var insertInlineEquation = (editor, texExpression, options) => {
+   );
+ };
+ 
+-// src/lib/BaseEquationPlugin.ts
+-var import_katex_min = require("katex/dist/katex.min.css");
++
+ var BaseEquationPlugin = (0, import_plate2.createSlatePlugin)({
+   key: "equation",
+   node: { isElement: true, isVoid: true }
+diff --git a/node_modules/@udecode/plate-math/dist/react/index.mjs b/node_modules/@udecode/plate-math/dist/react/index.mjs
+index fea85ce..ec47b9d 100644
+--- a/node_modules/@udecode/plate-math/dist/react/index.mjs
++++ b/node_modules/@udecode/plate-math/dist/react/index.mjs
+@@ -39,8 +39,9 @@ var insertInlineEquation = (editor, texExpression, options) => {
+   );
+ };
+ 
+-// src/lib/BaseEquationPlugin.ts
+-import "katex/dist/katex.min.css";
++if (typeof window !== 'undefined') {
++  import('katex/dist/katex.min.css');
++}
+ var BaseEquationPlugin = createSlatePlugin2({
+   key: "equation",
+   node: { isElement: true, isVoid: true }

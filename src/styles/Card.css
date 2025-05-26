@@ -1,0 +1,258 @@
+
+.card {
+  touch-action: scroll; 
+  overflow: hidden;
+  filter: saturate(.5);
+  opacity:85%;
+  transition: var(--t); 
+  transition:transform 0s;
+  transition:margin-left .5s;
+  width:100%;
+  border-radius: var(--br);
+  background-blend-mode: color-dodge, normal, normal, normal, normal;
+  animation: glow-bg 44s linear infinite;
+  background-color: #0e000a79;
+  /* font-family: 'Roboto', sans-serif; */
+  color: white;
+  border-top: .2px solid #6262623a;
+  border-bottom: .2px solid #9f9f9f38;
+  margin-bottom: -1px; 
+  pointer-events: auto;
+  
+}
+
+body.global-dragging .card {
+  pointer-events:none; /* Prevent text selection */
+  cursor: grabbing;
+}
+.card.local-dragging {
+  opacity: 0.5; /* Feedback for dragging this specific card */
+  cursor: grabbing;
+}
+
+.inside {
+  background: #0b0b0b;
+  z-index: 2;
+  padding: 15px 22px;
+  overflow: hidden;
+  
+}
+
+
+
+.card-title {
+  font-size: 14px; 
+  font-weight: 550;
+  text-align: left;
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-bottom: 4px;
+}
+
+.card-summary {
+  font-size: 12px; 
+  font-weight: 400;
+  text-align: left;
+  width: calc(100% - 42px);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-top: 0;
+  margin-bottom: 0;
+  /* display: none; */
+}
+
+.card-summary-expanded {
+  font-size: 12px; 
+  font-weight: 400;
+  text-align: left;
+  width: calc(100% - 42px);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Mobile and Tablet styles */
+@media (max-width: 1623px) {
+
+  
+  #cardtitlemobile {
+    font-size: 16px;
+  }
+  
+  #cardsummarymobile {
+    font-size: 13px;
+  }
+
+  /* Tablet styles within mobile range */
+  @media (min-width: 768px) {
+    
+    #cardtitlemobile {
+      font-size: 19px;
+    }
+    
+    #cardsummarymobile {
+      font-size: 17px;
+    }
+  }
+}
+
+
+.card:hover, .touch{
+  box-shadow: rgba(29, 6, 205, 0.354) 0px 0px 40px ; 
+  z-index:100;
+  opacity:100%;
+  filter: saturate(1);
+  --hl: 1;
+  background-image: radial-gradient(
+    farthest-side circle at var(--pointer-x, 10%) var(--pointer-y, 10%), 
+    hsla(222, 100%, 94%, var(--hl)) 0%,
+    hsla(222, 100%, 80%, var(--hl)) 0%,
+    hsl(240, 43%, 4%) 100%
+    ),
+    radial-gradient(40% 51% at 7% 32%, rgba(0, 0, 0, 0.518) 0%, #01000044 60%),
+    radial-gradient(40% 52% at 85% 67%, #9e494900 40%, #01020528 40%),
+    radial-gradient(80% 80% at 50% 50%, rgba(0, 0, 0, 0.655) 20%, #2108adbb 90%),
+    conic-gradient(
+      from var(--bgrotate) at 50% 50%,
+      #a84cff00 5%,
+      #07c5ff21 17%,
+      #07c6ff00 40%,
+      rgba(0, 255, 195, 0) 48%,
+      rgba(0, 255, 195, 0) 51%,
+      #07c6ff00 59%,
+      #07c5ff18 83%,
+      #a84cff00 95%
+      ),
+      conic-gradient(
+        from var(--bgrotate2) at 50% 50%,
+        rgba(90, 255, 244, 0) 0%,
+        rgba(190, 120, 255, 0) 34%,
+        rgba(190, 120, 255, 0) 64%,
+        rgba(90, 255, 244, 0) 100%
+        );
+      }
+
+.card:active{
+  box-shadow: rgba(6, 92, 205, 0.354) 0px 0px 20px ;
+  opacity:100%;
+  filter: saturate(1);
+  margin-left: var( --drag-x);
+  transition: margin-left 0s;
+  background-image: radial-gradient(
+    /* farthest-side circle at var(--pointer-x, 50%) var(--pointer-y, 50%), */
+    hsla(222, 100%, 94%, var(--hl)) 8%,
+    hsla(222, 100%, 80%, var(--hl)) 22%,
+    hsla(226, 78%, 48%, 0.941) 66%
+  ),
+  radial-gradient(40% 51% at 7% 32%, rgb(87, 182, 255) 0%, #073aff00 100%),
+  radial-gradient(40% 52% at 85% 67%, #0080ffc4 0%, #073aff00 100%),
+  radial-gradient(80% 80% at 50% 50%, rgb(0, 26, 255) 27%, #073aff00 58%),
+  conic-gradient(
+    from var(--bgrotate) at 50% 50%,
+    #ffa34c00 5%,
+    #073dff00 17%,
+    #0741ff00 40%,
+    rgba(0, 102, 255, 0.016) 48%,
+    rgba(0, 94, 255, 0) 51%,
+    #077bff00 59%,
+    #07c6ff00 83%,
+    #ffa54c00 95%
+  ),
+  conic-gradient(
+    from var(--bgrotate2) at 50% 50%,
+    rgba(90, 148, 255, 0) 0%,
+    rgba(255, 201, 120, 0) 34%,
+    rgba(255, 244, 120, 0) 64%,
+    rgba(90, 137, 255, 0) 100%
+  );
+}
+
+.card-score {
+  position:absolute;
+  right: 17px;
+  user-select: none; 
+  z-index:10;
+  top:10px;
+}
+
+.touch{
+  margin-left: var( --drag-x);
+  overflow:hidden;
+  transition:0s;
+}
+.notouch{
+  transition:margin 1s;
+}
+/* --------------------------------------------------------------------{   INSIDE   }------------------------------------------------- */
+
+.inside:hover {
+  background:#000000f3;
+}
+.inside:active {
+background:#000000;
+}
+@property --bgrotate {
+  initial-value: 120deg;
+  inherits: false;
+  syntax: "<angle>";
+}
+@property --bgrotate2 {
+  initial-value: 255deg;
+  inherits: false;
+  syntax: "<angle>";
+}
+@property --text {
+  initial-value: 220deg;
+  inherits: false;
+  syntax: "<angle>";
+}
+@property --dragdistance{
+  initial-value: 0px;
+  inherits: false;
+  syntax: "<angle>";
+}
+
+:root {
+  --ar: 0.718;
+  --br: 0;
+  --hl: 0;
+  --dx:0;
+  --sx:0;
+  --bg: hsl(var(--canvas), 15%, 12%);
+  --t: all 2s
+    linear(
+      0, 0.007, 0.028 2.1%,
+      0.112 4.6%,
+      0.224 6.9%,
+      0.604 14.2%,
+      0.713,
+      0.803,
+      0.879,
+      0.939,
+      0.985 26.2%,
+      1.019 28.9%,
+      1.034 30.7%,
+      1.045,
+      1.051 34.8%,
+      1.053 37.2%,
+      1.046 41.6%,
+      1.012 54.7%,
+      1.001 62.8%,
+      0.997 73%,
+      1
+    )
+}
+.cardnew{
+  background: rgba(2, 2, 2, 0.311);
+}
+.card-title-editable {
+  outline:none;
+  min-width:100px;
+}
+
+.card-body-with-img{
+  padding-left:40px;
+  user-select:none;
+}

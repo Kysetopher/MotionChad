@@ -1,0 +1,64 @@
+.suggestion-bar {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  width:100%;
+  box-sizing: border-box;
+  z-index: 100;
+  max-height: 100px; /* Set this to an appropriate height */
+  user-select: none; 
+  transition: max-height 0.3s ease-in-out;
+  gap:15px;
+  padding-top: 4px;
+  padding-bottom: 7px;
+}
+
+.suggestion-bar-hidden {
+  padding:0px;
+  max-height: 0px;
+  transition: max-height 0.3s ease-in-out;
+}
+.suggestion-mobile{
+  font-size: 15px;
+  width: 55px;
+  height: 55px;
+  box-shadow: inset 0 0 7px rgba(255, 255, 255, 0.447), inset 0 0 20px rgba(255, 255, 255, 0.326);
+  border-radius: 30px;
+  color: #e0e0e0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* filter: saturate(50%); */
+  padding-bottom: 2px;
+}
+.suggestion {
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.542), inset 0 0 3px rgba(255, 255, 255, 0.294);
+  border-radius: 30px;
+  color: #e0e0e0;
+  cursor: pointer;
+  font-size: 13px;
+  width:40px;
+  height:40px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  /* opacity: 90%; */
+  filter: saturate(55%);
+  padding-bottom:2px;
+}
+
+.suggestion:hover {
+    opacity: 100%;
+    filter: saturate(100%);
+    box-shadow:none;
+    font-size: 14.1px;
+    transition: .3s ease-in-out;
+}
+
+.suggestion:active {
+      filter: invert(100%);
+
+}

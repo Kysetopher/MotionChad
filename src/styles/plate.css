@@ -1,0 +1,10 @@
+
+
+[data-radix-popper-content-wrapper] {
+    transform:translate(150%,64px )!important;
+  }
+
+.plate-tile-container{
+    width:100%;
+}
+

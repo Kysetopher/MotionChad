@@ -1,0 +1,172 @@
+:root {
+  --overlay-drag-position: 0px;
+  --overlay-opacity:0;
+}
+
+.input-bar-wrapper {
+  overflow:hidden;
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  z-index: 100;
+  user-select: none;
+  background-color:rgba(0, 0, 0, 0.079);
+}
+
+.input-bar {
+  flex-direction: column-reverse;
+  overflow-x: auto; 
+  flex-wrap: nowrap; 
+  position: relative;
+  bottom: 0;
+  width: calc(100vw - 240px);
+  padding-left: 8.5px;
+  padding-right: 8.5px;
+  padding-top: 8px;
+  padding-bottom: 2px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  height: auto;
+  resize: none;
+  box-sizing: border-box;
+  touch-action: none;
+  z-index: 100;
+  /* background-color: rgb(32, 32, 32); */
+
+}
+.input-bar-login{
+  padding:10px;
+  z-index:10;
+  text-align:center;
+  width:100%;
+ }
+
+.input-bar-mobile{
+  width: 100%;
+
+}
+
+.input-bar::before {
+  content: '';
+  width: 100%;
+  height: 1px;
+  /* background-color: rgba(0, 193, 0, 0.1); */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+.text-area {
+  overflow: hidden;
+  resize: none;
+  height: var(--textarea-height, auto); 
+}
+
+.eye-icon {
+  position: absolute;
+  right: 12px;
+  bottom: 49%;
+  transform: translateY(50%);
+  cursor: pointer;
+  z-index: 10;
+  width: 25px;
+  height: 25px;
+  padding-top: 10px;
+}
+
+.text-area::placeholder {
+  font-style: italic;
+  color: rgba(126, 126, 126, 0.717);
+  font-weight: 400;
+}
+
+.text-area:focus::placeholder {
+  font-style: italic;
+  color: rgba(128, 128, 128, 0);
+  filter: blur(1px);
+  transition: .2s;
+}
+
+.input-bar input {
+  font-size: 15px;
+  width: 100%;
+  padding: 0px 0px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.input-bar textarea {
+  font-size: 15px;
+  width: calc(100% - 0px);
+  line-height: 1.5;
+  padding: 5.5px 12px 8.5px;
+  border: .5px solid var(--grey-accent-color);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  color: var(--primary-accent-color);
+  outline: none;
+  caret-color: var(--primary-accent-color);
+  resize: none;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding-right: 45px;
+  background-color: rgb(0, 0, 0);
+}
+
+/* Add hover and focus effects for better user experience */
+.input-bar input:hover,
+.input-bar textarea:hover {
+  border: .5px solid var(--secondary-accent-color);
+}
+
+.input-bar input:focus,
+.input-bar textarea:focus {
+  border: .5px solid var(--secondary-accent-color);
+  box-shadow: 0 0 1px var(--primary-accent-color);
+}
+
+.hidden-inputbar-overlay{
+  height: 0;
+  transition:0.5s ease-out;
+}
+
+.inputbar-drag-overlay{
+  position: absolute;
+  bottom: var(--page-padding-bottom);
+  height: var(--overlay-drag-position);
+  width:100%;
+  pointer-events: none; /* Prevent interfering with other elements */
+  background-color: #000000; 
+  opacity:  var(--overlay-opacity);
+  max-height:calc(100vh - (45px + var(--page-padding-bottom)));
+}
+
+.full-inputbar-overlay{
+  height:calc(100vh - (45px + var(--page-padding-bottom)));
+  transition:0.1s ease-out;
+}
+
+/* Mobile and Tablet styles */
+@media (max-width: 1523px) {
+
+  #mobileinputbartext {
+    font-size: 18px;
+    /* padding-bottom: 17px; */
+  }
+
+  /* Tablet styles within mobile range */
+  @media (min-width: 768px) {
+
+    #mobileinputbartext  {
+      font-size: 20px;
+      /* padding-bottom: 19px; */
+    }
+  }
+}

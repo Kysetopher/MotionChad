@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  # 1) Next.js App
+  app:
+    image: ckyser/nextjs-app:latest
+    container_name: nextjs_app
+    env_file: .env
+    expose:
+      - "3000"
+    networks:
+      - shared-net
+    restart: unless-stopped
+
+  # 2) Nginx with Cloudflare SSL
+  nginx:
+    image: ckyser/nginx-cloudflare:latest
+    container_name: nginx_cloudflare
+    depends_on:
+      - app
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - shared-net
+    restart: unless-stopped
+
+networks:
+  shared-net:
+    external: true

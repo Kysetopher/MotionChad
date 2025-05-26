@@ -1,0 +1,168 @@
+
+.stripe-checkout-form{
+    padding:10px;
+    border-radius:5px;
+    border: 1px solid var(--primary-accent-color);
+    display: grid;
+
+}
+
+
+
+.stripe-card-information{
+    border-radius:5px;
+    border: 1px solid var(--primary-accent-color);
+    align-items: center;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.stripe-card-customer-name{
+    background-color: #02020200 !important;
+    outline: none;
+    border-radius:5px;
+    border: 1px solid var(--primary-accent-color);
+    padding:10px;
+
+    
+}
+
+.stripe-card-element-full{
+    background-color: #02020200 !important;
+    padding:10px;
+    border-bottom: 1px solid var(--primary-accent-color);
+    grid-column: 1 / -1; /* Make the header span across the entire width */
+}
+.stripe-card-element-half{
+    background-color: #02020200 !important;
+    padding:10px;
+
+
+}
+.stripe-card-element-half:last-child{
+    border-left: 1px solid var(--primary-accent-color);
+
+}
+.stripe-checkout-header{
+    margin-top:10px;
+    margin-bottom:5px;
+    text-align: left;
+}
+
+.stripe-menu-error{
+    color:var(--negative-accent-color);
+}
+.stripe-menu-success{
+    color:var(--negative-accent-color);
+  }
+*{
+color:white;
+}
+
+.stripe-button{
+    background-color: rgba(240, 248, 255, 0);
+   border-width: 0;
+   padding:0px;
+    width:100%;
+   }
+
+
+.stripe-button-error{
+    padding-top:10px;
+    gap:10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+.subscription-button {
+    background-color: var(--secondary-accent-color); 
+    justify-self: end; 
+    border: 1px solid  #00000000; 
+    padding: 8px 12px 7px 12px;
+}
+.subscription-button-processing{
+    width:60px;
+}
+.subscription-button:hover {
+    background-color: #00000000; 
+    border: 1px solid  var(--primary-accent-color); 
+    padding: 8px 12px 7px 12px;
+}
+
+.subscription-button-manage{
+    background-color: var(--negative-accent-color); 
+    border: none;
+    
+    padding: 8px 12px 7px 12px;
+}
+.subscription-button-manage:hover {
+    background-color: #00000000; 
+    border: none;
+    border: 1px solid  var(--negative-accent-color); 
+    padding: 7px 11px 6px 11px;
+}
+
+.subscription-table{
+    margin-top:30px;
+    user-select: none;
+    display: grid;
+   
+    text-align: left;
+}
+
+.subscription-table > table{
+    background-color:#212121;
+    padding:1px;
+}
+.subscription-table > table td,
+.subscription-table > table th {
+    border-bottom: 1px solid rgb(195, 195, 195); /* or use 1px for a thinner line */
+    padding:10px;
+}
+.subscription-field-active {
+    color:green;
+}
+.subscription-field-inactive {
+    color:var(--negative-accent-color);
+}
+.stripe-status-inactive {
+    text-align: center;
+    padding: 30px;
+    color: var(--negative-accent-color);
+    font-size: 24px;
+    font-weight: 600; 
+    user-select:none;
+}
+
+.stripe-status-active {
+    text-align: center;
+    padding: 30px;
+    color:var(--primary-accent-color); 
+    padding-bottom:0px; 
+    font-size: 24px;
+    font-weight: 600; 
+    user-select:none;
+}
+
+.stripe-status-description {
+    text-align: center;
+    padding-bottom:30px; 
+    user-select:none;
+}
+
+.subscription-cell {
+    text-align: left;
+    display: grid;
+    justify-content: center;
+}
+
+.subscription-title {
+    color:var(--primary-accent-color); 
+    font-weight: 400;
+}
+
+.subscription-description {
+    font-size:12px;
+}
+

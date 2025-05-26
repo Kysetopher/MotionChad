@@ -1,0 +1,88 @@
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color:rgba(27,27,27,0.679);
+    backdrop-filter:blur(5px);
+    height: 44px;
+    z-index: 10;
+    user-select: none;
+    justify-content: center;
+  }
+
+  .header-delete{
+    background-color:rgb(34, 3, 3);
+  }
+  .top-menu-drop {
+    transform: translateX(0);
+  }
+  .top-menu-back {
+    transform: translateX(calc(-50%  + 15px ));
+  }
+  .top-menu-drop,.top-menu-back{
+    height: 100%;
+    margin-top:4px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    transition:1s;
+  }
+  .down-arrow {
+    transition:transform .2s;
+  }
+  .up-arrow{
+    transform: scaleY(-1);
+    transform-origin: center;
+
+    transition:transform .2s;
+  }
+  .back-arrow {
+    transform: rotate(90deg);
+    transition:transform 1s;
+  }
+.up-arrow,.back-arrow,.down-arrow{
+   
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    fill: var(--secondary-accent-color);
+} 
+.up-arrow:hover,.back-arrow:hover,.down-arrow:hover{
+    color:rgba(11, 42, 17, 0.941);
+} 
+.topbar-right-button{
+  position:absolute;
+  top:7px;
+  right:15px;
+}
+.topbar-left-button{
+  position:absolute;
+  display:flex;
+  top:7px;
+  left:15px;
+  gap: 10px;
+}
+.delete-reverie-img {
+  width:30px;
+}
+.topbar-img {
+  width: 30px;
+  opacity: 100%;
+  border-radius: 5px;
+}
+.topbar-img.selected {
+  filter: invert(72%) sepia(58%) saturate(2086%) hue-rotate(96deg) brightness(108%) contrast(94%);
+}
+
+.topbar-title {
+  top:10px;
+  color:white;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  position:absolute;
+  width:calc(100% - 42px);
+  pointer-events: none;
+  padding-left:42px;
+
+}

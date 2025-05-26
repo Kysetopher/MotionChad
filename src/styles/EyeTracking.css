@@ -1,0 +1,61 @@
+.eye-button {
+  padding: 0;
+  display: grid;
+  place-items: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 5px;
+  border: 0;
+  bottom: 7px;
+  background: transparent;
+  color: green;
+  position: absolute;
+  right: 5px;
+  cursor: pointer;
+  outline: 0;
+  z-index: 99;
+}
+
+.input-bar button.eye-button svg.eye-icon {
+  width: 60%;
+  height: 100%;
+}
+
+.lid--upper {
+  transform-origin: bottom center;
+  /* transition: attr 2.9s; */
+}
+
+.eyeball {
+  opacity: 0;
+  /* transition: opacity 0.1s linear; */
+}
+
+
+.eye-swirl {
+  right:5px;
+  top:5px;
+  position:relative;
+  display: flex;
+  align-items:center;
+  justify-content:stretch;
+  overflow: hidden;
+  -webkit-mask-image: radial-gradient(circle, rgb(0, 0, 0), rgba(0, 0, 0, 0.163) ,rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) );
+  mask-image: radial-gradient(circle, rgb(0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) );
+
+}
+
+
+
+@media (max-width: 1723px) {
+  #eye-button {
+    top: 3px;
+  }
+
+  @media (min-width: 768px) {
+    #eye-button {
+      top: 200px;
+    }
+
+  }
+}

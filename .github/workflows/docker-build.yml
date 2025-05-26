@@ -1,0 +1,42 @@
+name: Build and Push Docker Images
+
+on:
+  push:
+    branches:
+      - main  # Trigger on push to main branch
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Create SSL certificates from secrets
+        run: |
+          mkdir -p certs
+          echo "${{ secrets.ORIGIN_CERT_PEM }}" > certs/origin_cert.pem
+          echo "${{ secrets.ORIGIN_KEY_PEM }}" > certs/origin_key.pem
+
+      - name: Build and push Next.js app image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: dockerfile.nextjs
+          push: true
+          tags: ckyser/nextjs-app:latest
+
+      - name: Build and push Nginx Cloudflare SSL image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: dockerfile.nginx-certbot
+          push: true
+          tags: ckyser/nginx-cloudflare:latest
