@@ -1,6 +1,6 @@
 {
-    "name": "Wishh.ai",
-    "short_name": "Wishh.ai",
+    "name": "AI Starter",
+    "short_name": "AI Starter",
     "description": "Install webapp",
     "start_url": "/",
     "display": "standalone",
